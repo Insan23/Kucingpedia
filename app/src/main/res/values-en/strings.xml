@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Catpedia</string>
+    <string name="persia">Persian</string>
+    <string name="exotic_shorthair">Exotic Shorthair</string>
+    <string name="abyssinian">Abyssinian</string>
+    <string name="burmese">Burmese</string>
+    <string name="maine_coon">Maine Coon</string>
+    <string name="russian_blue">Russian Blue</string>
+    <string name="siamese">Siamese</string>
+    <string name="ragdoll">Ragdoll</string>
+    <string name="sphynx">Sphynx</string>
+    <string name="munchkin">Munchkin</string>
+
+    <!-- Species Details -->
+    <string name="persia_detail">Kucing Persia memiliki sifat ramah dan sangat menyayangi pemiliknya, bahkan orang yang tidak dikenal. Mereka menikmati hari-hari dengan meringkuk di sofa atau tidur bersama pemiliknya. Sifat kucing persia sangat santai dan butuh perhatian. Jadi kucing ini akan manja jika anda tinggal dalam waktu yang cukup lama.</string>
+    <string name="exotic_shorthair_detail">Exotic Shorthair adalah jenis kucing yang cocok untuk duduk dan di-elus karena sifatnya yang manja. Mereka jinak, penyayang dan butuh akan kasih sayang Anda. Exotic Shorthair bukan ras kucing yang paling aktif, tapi untuk Anda yang suka kucing yang cenderung memiliki sifat tenang dan suka tidur-tiduran saja, Exotic Shorthair adalah jenis kucing yang cocok untuk Anda.</string>
+    <string name="abyssinian_detail">Berbeda dengan jenis Exotic Ehorthair, kucing jenis Abyssinian adalah tentang kucing yang aktif, cerdas, dan suka bermain. Abyssinian tidak diskriminatif saat berhubungan dengan teman bermain, manusia maupun kucing lain.
+
+Mereka menikmati berinteraksi dengan orang-orang dari segala umur, keluarga dan orang asing. Kemampuan adaptif Abyssinian menjadikannya pilihan tepat bagi orang tua yang menginginkan kucing yang bisa bermain dengan anak-anak.</string>
+    <string name="burmese_detail">Burmese salah satu jenis kucing yang paling ramah. Mereka akan memikat perhatian Anda dan tidak menyukai apa-apa selain meringkuk di sofa dengan manusia favorit mereka. Kucing jenis Burmese sangat penyayang dan loyal kepada pemiliknya.</string>
+    <string name="maine_coon_detail">Selain terkenal karena menjadi salah satu ras kucing terbesar, Maine Coon sangat ramah dan akan senang tinggal di rumah dengan kucing jenis lain, bahkan anjing juga. Mereka percaya diri dan sangat mencintai tapi tidak menuntut perhatian.
+
+Mereka akan menikmati perhatian kamu dan banyak akan ‘berbicara’ dengan cara mengeong.</string>
+    <string name="russian_blue_detail">Jangan terkecoh dengan banyak perkataan bahwa kucing jenis Russian Blue ini senang menyendiri. Kucing ini suka mengamati sebelum mereka bertindak. Setelah Russian Blue nyaman dengan Anda, mereka akan selalu dekat.
+
+Russian Blue suka bermain dan menjadi bagian dari semua hal yang Anda lakukan, termasuk berbagi tempat tidur. Karena sifat mereka yang introvert, Russian Blue tidak akan terburu-buru menjadi bagian dari pertemuan sosial, jika seperti waktu ada tamu.
+
+Tetapi begitu mereka merasa tenang, mereka akan sangat nyaman dengan kamu lho.</string>
+    <string name="siamese_detail">Kucing Siam atau Siamese berbagi banyak kualitas seperti kucing Burmese, ditambah dengan rasa ingin tahu yang besar. Kucing Siam tidak hanya menginginkan perhatian Anda, mereka juga ingin menjadi bagian dari semua hal yang Anda lakukan.
+
+Mereka akan dengan senang hati memikirkan tugas, makan dan ikut di waktu menonton TV. Karena berbagai minat mereka, jenis ini juga dikenal dengan mudah bergaul dengan semua orang dan sering bertingkah seperti seekor anjing.</string>
+    <string name="ragdoll_detail">Jenis kucing Ragdoll ini di-desain untuk kasih sayang. Ragdoll adalah jenis kucing yang santai dan sselalu mencari perhatian dari pemiliknya. Ragdoll ini tidak terlalu suka mengeksplorasi, ia lebih memilih untuk mengikuti pemilik di sekitar rumah dan tetap berada dalam jarak dekat.</string>
+    <string name="sphynx_detail">Tidak ada keraguan bahwa jenis kucing Sphynx menyukai perhatian, kasih sayang dan sesi bermain yang cukup sering. Selain itu, sifatnya juga penyayang dan selalu bergantung kepada manusia untuk tetap hangat dan bersih.
+
+Jenis kucing Sphynx adalah salah satu jenis kucing termahal di dunia, selain itu kucing ini mudah dikenali karena badannya yang tidak berbulu, tidak seperti kucing kebanyakan.</string>
+    <string name="munchkin_detail">Kucing Munchkin adalah jenis kucing yang suka berteman. Munchkin adalah kucing energik yang suka bermain dengan anak-anak, kucing, dan anjing lainnya. Kucing ini suka jalan-jalan di rumah dan butuh cara untuk tetap aktif.
+
+Ajari mereka trik dan bawakan mereka mainan dan makanan agar mereka bisa tetap sibuk saat Anda sedang tidak di rumah.</string>
+</resources>
