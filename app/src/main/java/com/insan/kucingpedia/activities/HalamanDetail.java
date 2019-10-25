@@ -26,6 +26,16 @@ public class HalamanDetail extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.getNavigationIcon().setColorFilter(getResources().getColor(R.color.white), PorterDuff.Mode.SRC_ATOP);
 
+        rasDetail = findViewById(R.id.ras);
+        deskripsiDetail = findViewById(R.id.deskripsi);
+        fotoDetail = findViewById(R.id.foto);
 
+        String ras = getIntent().getStringExtra("ras");
+        String deskripsi = getIntent().getStringExtra("deskripsi");
+        byte[] foto = getIntent().getByteArrayExtra("foto");
+
+        rasDetail.setText(ras);
+        deskripsiDetail.setText(deskripsi);
+        fotoDetail.setImageBitmap(BitmapFactory.decodeByteArray(foto, 0, foto.length));
     }
 }
