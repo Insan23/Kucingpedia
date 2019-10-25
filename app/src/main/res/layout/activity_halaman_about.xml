@@ -6,6 +6,43 @@
     android:layout_height="match_parent"
     tools:context=".activities.HalamanAbout">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <ImageView
+            android:id="@+id/foto_saya"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="96dp"
+            android:layout_marginBottom="16dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/fooo" />
+
+        <TextView
+            android:id="@+id/email_saya"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nama_saya"
+            android:layout_centerHorizontal="true"
+            android:text="zuna.ruka596@gmail.com"
+            android:textSize="18sp" />
+
+
+        <TextView
+            android:id="@+id/nama_saya"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/foto_saya"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="8dp"
+            android:text="Moch Zufarulhaq Aleq Insan"
+            android:textColor="#000"
+            android:textSize="20sp" />
+
+    </RelativeLayout>
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
