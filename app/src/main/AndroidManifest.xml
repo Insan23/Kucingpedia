@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.insan.kucingpedia">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,19 +12,29 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".Koleksiku"
-            android:label="@string/title_activity_koleksiku"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".HalamanTambah" />
-        <activity android:name=".HalamanAbout" />
-        <activity android:name=".HalamanDetail" />
+            android:name=".activities.HalamanTambah"
+            android:label="Tambah Informasi Kucing Baru"
+            android:parentActivityName=".activities.HalamanUtama"
+            android:screenOrientation="portrait" />
         <activity
-            android:name=".HalamanUtama"
-            android:label="@string/title_activity_halaman_utama"
+            android:name=".activities.HalamanAbout"
+            android:label="Tentang"
+            android:parentActivityName=".activities.HalamanUtama"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.HalamanDetail"
+            android:label="Detail Kucing"
+            android:parentActivityName=".activities.HalamanUtama"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.HalamanUtama"
+            android:label="Kucing Pedia"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".HalamanMulai"
-            android:noHistory="true">
+            android:name=".activities.HalamanMulai"
+            android:noHistory="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
