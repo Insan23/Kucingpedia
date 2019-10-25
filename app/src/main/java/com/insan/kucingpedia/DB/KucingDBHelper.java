@@ -1,6 +1,5 @@
 package com.insan.kucingpedia.DB;
 
-import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -10,9 +9,9 @@ public class KucingDBHelper extends SQLiteOpenHelper {
     private static final String CREATE =
             "CREATE TABLE " + KucingDB.KucingEntry.TB_NAME + " (" +
                     KucingDB.KucingEntry._ID + " INTEGER PRIMARY KEY," +
-                    KucingDB.KucingEntry.COL_NAMA_KUCING + " TEXT," +
                     KucingDB.KucingEntry.COL_RAS_KUCING + " TEXT," +
-                    KucingDB.KucingEntry.COL_JENIS_KELAMIN + " TEXT," +
+                    KucingDB.KucingEntry.COL_DESKRIPSI + " TEXT," +
+                    KucingDB.KucingEntry.COL_IMG + " BLOB," +
                     KucingDB.KucingEntry.COL_TIPE + " TEXT)";
 
     private static final String DELETE = "DROP TABLE IF EXISTS " + KucingDB.KucingEntry.TB_NAME;

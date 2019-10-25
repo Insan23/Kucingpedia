@@ -1,13 +1,12 @@
 package com.insan.kucingpedia.DB;
 
 import android.content.ContentValues;
-import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import static android.provider.BaseColumns._ID;
-import static com.insan.kucingpedia.DB.KucingDB.KucingEntry.COL_JENIS_KELAMIN;
-import static com.insan.kucingpedia.DB.KucingDB.KucingEntry.COL_NAMA_KUCING;
+import static com.insan.kucingpedia.DB.KucingDB.KucingEntry.COL_DESKRIPSI;
+import static com.insan.kucingpedia.DB.KucingDB.KucingEntry.COL_IMG;
 import static com.insan.kucingpedia.DB.KucingDB.KucingEntry.COL_RAS_KUCING;
 import static com.insan.kucingpedia.DB.KucingDB.KucingEntry.COL_TIPE;
 import static com.insan.kucingpedia.DB.KucingDB.KucingEntry.TB_NAME;
@@ -25,12 +24,12 @@ public class KucingDBOperation {
     }
 
     public Cursor readAllData() {
-        String[] kolom = {_ID, COL_NAMA_KUCING, COL_RAS_KUCING, COL_JENIS_KELAMIN, COL_TIPE};
+        String[] kolom = {_ID, COL_RAS_KUCING, COL_DESKRIPSI, COL_IMG, COL_TIPE};
         return db.query(TB_NAME, kolom, null, null, null, null, null);
     }
 
     public Cursor readById(long id) {
-        String[] kolom = {_ID, COL_NAMA_KUCING, COL_RAS_KUCING, COL_JENIS_KELAMIN, COL_TIPE};
+        String[] kolom = {_ID, COL_RAS_KUCING, COL_DESKRIPSI, COL_TIPE};
         String kolomWh = _ID + "=?";
         String[] whArgs = {String.valueOf(id)};
         return db.query(TB_NAME, kolom, kolomWh, whArgs, null, null, null);

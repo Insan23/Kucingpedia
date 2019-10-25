@@ -37,4 +37,6 @@ Jenis kucing Sphynx adalah salah satu jenis kucing termahal di dunia, selain itu
     <string name="munchkin_detail">Kucing Munchkin adalah jenis kucing yang suka berteman. Munchkin adalah kucing energik yang suka bermain dengan anak-anak, kucing, dan anjing lainnya. Kucing ini suka jalan-jalan di rumah dan butuh cara untuk tetap aktif.
 
 Ajari mereka trik dan bawakan mereka mainan dan makanan agar mereka bisa tetap sibuk saat Anda sedang tidak di rumah.</string>
+    <string name="tip_text">Tip, tekan dan tahan salah satu item pada daftar</string>
+    <string name="about_title">Tentang</string>
 </resources>
