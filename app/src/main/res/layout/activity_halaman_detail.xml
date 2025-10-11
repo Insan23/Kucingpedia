@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingTop="?attr/actionBarSize"
     tools:context=".activities.HalamanDetail">
 
     <RelativeLayout
@@ -17,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/container_foto"
-            android:textColor="#000"
+            android:textColor="?android:attr/textColorPrimary"
             android:textSize="24sp"
             tools:text="Ras Kucing" />
 
@@ -26,6 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/ras"
+            android:textColor="?android:attr/textColorPrimary"
             android:textSize="17sp"
             tools:text="sjdblsvkdnv ksndlcn alzdknvkzndvksdvkjdb cvksjdvskjdbfvksjndvjsbkdjvnkasjdnckjadvlajdlcnaksjvbksjdnlvlkdnclkdnclkandvlc" />
 
@@ -52,14 +54,14 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:theme="@style/Widget.Design.AppBarLayout">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:popupTheme="@style/Widget.AppCompat.PopupMenu.Overflow"
             app:title="Detail" />
 
     </com.google.android.material.appbar.AppBarLayout>

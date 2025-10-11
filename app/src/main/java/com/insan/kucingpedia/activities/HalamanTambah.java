@@ -10,10 +10,12 @@ import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.res.ColorStateList;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.net.Uri;
 import android.os.Bundle;
@@ -32,10 +34,13 @@ import com.insan.kucingpedia.DB.KucingDBHelper;
 import com.insan.kucingpedia.DB.KucingDBOperation;
 import com.insan.kucingpedia.R;
 
+import java.io.BufferedInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 
 public class HalamanTambah extends AppCompatActivity {
 
@@ -101,25 +106,39 @@ public class HalamanTambah extends AppCompatActivity {
             if (requestCode == KODE_AMBIL_FOTO) {
                 Uri selectedImage = data.getData();
                 String[] filePathColumn = {MediaStore.Images.Media.DATA};
-                Cursor cursor = getContentResolver().query(selectedImage, filePathColumn, null, null, null);
-                cursor.moveToFirst();
-                int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-                String imgDecodableString = cursor.getString(columnIndex);
-                cursor.close();
-
-                ByteArrayOutputStream b = new ByteArrayOutputStream();
+                Bitmap resized = null;
                 try {
-                    FileInputStream f = new FileInputStream(new File(imgDecodableString));
-                    byte[] bfr = new byte[1024];
-                    int o;
-                    while (-1 != (o = f.read(bfr))) b.write(bfr, 0, o);
+                    InputStream inputStream = getContentResolver().openInputStream(selectedImage);
+                    InputStream buff = new BufferedInputStream(inputStream);
+                    resized = decodeSampledBitmapFromStream(buff, 700, 700);
+//                    inputStream.close();
+                    buff.close();
+                } catch (FileNotFoundException e) {
+                    Log.w(HalamanTambah.class.getSimpleName(), e.getMessage());
                 } catch (IOException e) {
-                    e.getMessage();
                     Log.w(HalamanTambah.class.getSimpleName(), e.getMessage());
                 }
-                fotoTerpilih = b.toByteArray();
-                foto.setImageBitmap(BitmapFactory.decodeFile(imgDecodableString));
+//                Cursor cursor = getContentResolver().query(selectedImage, filePathColumn, null, null, null);
+//                cursor.moveToFirst();
+//                int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+//                String imgDecodableString = cursor.getString(columnIndex);
+//                cursor.close();
+//
+//                ByteArrayOutputStream b = new ByteArrayOutputStream();
+//                try {
+//                    FileInputStream f = new FileInputStream(imgDecodableString);
+//                    byte[] bfr = new byte[1024];
+//                    int o;
+//                    while (-1 != (o = f.read(bfr))) b.write(bfr, 0, o);
+//                } catch (IOException e) {
+//                    e.getMessage();
+//                    Log.w(HalamanTambah.class.getSimpleName(), e.getMessage());
+//                }
+                fotoTerpilih = toByteArray(resized);
+                foto.setImageBitmap(resized);
+                foto.setImageTintList(null);
             }
+        super.onActivityResult(requestCode, resultCode, data);
     }
 
     private void simpanInformasi() {
@@ -195,5 +214,47 @@ public class HalamanTambah extends AppCompatActivity {
             findViewById(R.id.pro_circular).setVisibility(View.VISIBLE);
         }
     }
+
+
+    private byte[] toByteArray(Bitmap bp) {
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        bp.compress(Bitmap.CompressFormat.JPEG, 90, stream);
+        return stream.toByteArray();
+    }
+
+    private static Bitmap decodeSampledBitmapFromStream(InputStream inputStream, int reqWidth, int reqHeight) throws IOException {
+        // First, decode with inJustDecodeBounds=true to check dimensions
+        inputStream.mark(inputStream.available()); // Mark the current position
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inJustDecodeBounds = true;
+
+        BitmapFactory.decodeStream(inputStream, null, options);
+        inputStream.reset(); // Reset to the beginning for actual decode
+
+        // Calculate inSampleSize
+        options.inSampleSize = calculateInSampleSize(options, reqWidth, reqHeight);
+
+        // Decode bitmap with inSampleSize set
+        options.inJustDecodeBounds = false;
+        return BitmapFactory.decodeStream(inputStream, null, options);
+    }
+
+    // Helper function to compute sample size
+    private static int calculateInSampleSize(BitmapFactory.Options options, int reqWidth, int reqHeight) {
+        int height = options.outHeight;
+        int width = options.outWidth;
+        int inSampleSize = 1;
+
+        if (height > reqHeight || width > reqWidth) {
+            int halfHeight = height / 2;
+            int halfWidth = width / 2;
+
+            while ((halfHeight / inSampleSize) >= reqHeight && (halfWidth / inSampleSize) >= reqWidth) {
+                inSampleSize *= 2;
+            }
+        }
+        return inSampleSize;
+    }
+
 
 }

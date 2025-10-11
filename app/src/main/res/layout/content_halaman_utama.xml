@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?android:attr/windowBackground"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".activities.HalamanUtama"
     tools:showIn="@layout/activity_halaman_utama">
@@ -11,25 +12,26 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/list_kucing"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        tools:listitem="@layout/list_item_kucing" />
 
     <ProgressBar
         android:id="@+id/pro_circular"
         android:layout_width="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
 
     <TextView
         android:id="@+id/toast_kecil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
         android:layout_marginBottom="96dp"
-        android:padding="16dp"
-        android:visibility="gone"
-        android:textColor="#fff"
         android:background="@drawable/bg_toast_small"
-        android:text="@string/tip_text"/>
+        android:padding="16dp"
+        android:text="@string/tip_text"
+        android:textColor="#fff"
+        android:visibility="gone" />
 
 </RelativeLayout>

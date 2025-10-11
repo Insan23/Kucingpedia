@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingTop="?attr/actionBarSize"
     tools:context=".activities.HalamanTambah">
 
     <Button
@@ -44,6 +45,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/layout_deskripsi"
                 android:layout_marginTop="16dp"
+                app:tint="?attr/colorControlNormal"
                 android:background="@drawable/bg_grad_1"
                 android:scaleType="fitCenter"
                 android:src="@drawable/ic_add_a_photo" />
@@ -108,14 +110,14 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:theme="@style/Widget.Design.AppBarLayout">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:popupTheme="@style/Widget.AppCompat.PopupMenu.Overflow"
             app:title="Kucing Pedia" />
 
     </com.google.android.material.appbar.AppBarLayout>

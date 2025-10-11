@@ -11,6 +11,8 @@ import android.widget.TextView;
 
 import com.insan.kucingpedia.R;
 
+import java.util.Objects;
+
 public class HalamanDetail extends AppCompatActivity {
 
     private TextView rasDetail, deskripsiDetail;
@@ -23,7 +25,7 @@ public class HalamanDetail extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         toolbar.getNavigationIcon().setColorFilter(getResources().getColor(R.color.white), PorterDuff.Mode.SRC_ATOP);
 
         rasDetail = findViewById(R.id.ras);
